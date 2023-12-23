@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-b$c+wc6jtbt^082%8cr$*gr0z1e(lxa#60=*ab70%^v%kwnkt2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -41,6 +41,17 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'asvs_app',
+    "authentication",
+    'rest_framework',
+    "gallery",
+    "carousel",
+    "about_asvs",
+    "what_we_can",
+    "event",
+    "meet_our_team",
+    "volunteer",
+    "blog",
+    "payment"
 ]
 
 MIDDLEWARE = [
@@ -85,6 +96,9 @@ DATABASES = {
 }
 
 
+
+AUTH_USER_MODEL = 'authentication.User'
+
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
@@ -120,11 +134,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
-
+MEADIA_URL = "images/"
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
-
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+MEADIA_ROOT = os.path.join(BASE_DIR,"images")
 STATICFILES_DIRS=[STATIC_DIR]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+RAZORPAY_KEY_ID = "rzp_test_G41sFJ3BylKw3u"
+RAZORPAY_SECRETE_KEY = "flAVOyTYMBL2RGHpbAl47JiW"
