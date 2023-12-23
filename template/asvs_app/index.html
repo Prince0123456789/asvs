@@ -31,6 +31,14 @@
         html {
             scroll-behavior: smooth;
         }
+        .formInput {
+        display: flex;
+        align-items: center;
+        padding-top: 3px;
+      }
+      .formInput label {
+        flex-basis: 110px;
+      }
     </style>
 
 </head>
@@ -158,12 +166,19 @@
                 <div class="modal-body">
                     <form id="donate_form">
                         {%csrf_token%}
+                      
+                    <div class="formInput">
                         <label for="">Name:</label>
                         <input type="text" name="name" id="donator"><br>
+                    </div>
+                    <div class="formInput">
                         <label for="">Email:</label>
                         <input type="email" name="email" id="donator_email_id"><br>
+                    </div>
+                    <div class="formInput">
                         <label for="">Amount:</label>
                         <input type="number" name="amount" id="donate_amount">
+                    </div>
 
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
